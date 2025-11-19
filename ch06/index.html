@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box1 {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .box2 {
+        background-color: blue;
+         width: 100px;
+         height: 100px;
+    }
+
+    
+    .box3 {
+        background-color: blue;
+        display: inline-block;
+         width: 100px;
+         height: 100px;
+         overflow: hidden;
+         /* 잘린 부분 잘라주기 */
+    }
+    </style>
+</head>
+<body>
+    <!-- 옆으로 가면 인라인 -->
+     <!-- 밑으로 가면 블럭 -->
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <span class="box2">ddddddddd</span>
+    <span class="box2">ddddddddd</span>
+    <div class="box3">ddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="box3">dddddddddddd</div>
+
+</body>
+</html>
