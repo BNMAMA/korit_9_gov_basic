@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       input[type=checkbox] {
+        display: none;
+       }
+       
+       
+       /* 인적형제 선택(label) */
+        input[type=checkbox]  + label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            padding: 5px;
+            width: 45px;
+            height: 45px;
+        }
+        
+        /* 인적형제가 체크가 돼 있는 상태 */
+        input[type=checkbox]:checked + label::after {
+            content: "✔️";
+            /* ctrl + . */
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            background-color: #3b7520;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="ck1">
+    <label for="ck1"></label>
+
+    <input type="checkbox" id="ck2">
+    <label for="ck2"></label>
+   
+</body>
+</html>

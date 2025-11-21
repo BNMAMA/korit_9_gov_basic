@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //호이스팅(순서에 상관없이 출력이 가능함)
+       
+        // 초기화 -> 선언
+        a = 10;
+        console.log(a);
+        var a; 
+        
+        // let(변수)은 호이스팅 허용 안함, 재선언도 안됨 
+        let b;
+        // const(상수)는 선언 즉시 선언해야 됨
+        const c = 10;
+        console.log(b);
+        
+        //출력 -> 함수 정의
+        print();
+    function print() {
+        console.log("출력!!")
+    }
+
+
+
+    </script>
+</body>
+</html>

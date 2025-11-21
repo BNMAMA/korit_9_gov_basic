@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 익명함수
+
+        const fx1 = function a(){};
+        fx1();
+        const fx2 = function (){};
+        fx2();
+
+        function fx3(c) { 
+            c();
+        }
+
+        fx3(function b() {});
+        fx3(function () {});
+        
+
+        fx3(() => {});
+
+        const fx4 = () => {};
+
+        function main() {
+            const add = (a, b) => {
+                return a + b;
+            }
+
+            console.log(add(10, 20));
+        }
+
+        //함수객체(동기가 우선순위가 높음)
+        setTimeout(() => {
+            console.log('3초 뒤에 출력'); //1(대기), 2(실행)
+        }, 3000); //비동기화
+
+        console.log('3초 뒤에 출력???????') //1(실행), 
+    </script>
+</body>
+</html>
