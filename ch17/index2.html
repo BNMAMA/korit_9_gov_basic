@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+    promise
+    */
+      //1. promise 객체 생성(안에 함수 생성)
+      //   생성 한다고 비동기가 일어나는 것은 아님(함수 무조건 호출)
+      //   resolve 랑 reject가 비동기를 시킴
+      //   큐(FIFO) 형식으로 동기동작 -> 비동기 동작이 일어남
+      //
+      const executor = (resolve, reject) => {
+        console.log(1);
+        console.log(2);
+        setTimeout(() => resolve(), 3000);
+
+        // resolve(); // resolve랑 then이랑은 세트(resolve가 없으며 then 호출 불가)
+      };
+
+      new Promise(executor).then(() => {
+        //resolve가 실행될 때 실행하세요 라고 등록
+        console.log(6);
+      });
+
+      console.log(3);
+
+      new Promise((resolve, reject) => {
+        console.log(4);
+        console.log(5);
+        resolve();
+      }).then(() => {
+        console.log(7);
+      });
+
+      new Promise((resolve, reject) => {
+        console.log("promise 생성");
+        setTimeout(() => {
+          const name = prompt("이름입력");
+          if (!name) {
+            reject("오류!!!!");
+            return;
+          }
+
+          resolve(name);
+        }, 5000);
+        
+      }).then((name) => {
+        console.log(8);
+        console.log(name);
+      }).catch((error) =>  {
+        console.log(error);
+      });
+    </script>
+  </body>
+</html>

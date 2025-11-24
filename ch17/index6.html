@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 비동기
+        async await
+        */
+
+        //내가 원할 때 promise 가져오기(함수를 이용해서)
+       function callPromise(num) {
+        
+            return new Promise((rs, rj) => {
+                console.log("프로미스 생성");
+                if (num % 2 !== 0 ) {
+                    rs("홀수");
+                } else {
+                    rj(new Error("짝수"));
+                }
+            });
+       }
+
+       
+       callPromise(11)/*1*/.then(v => console.log(v)).catch(e => console.error(e));
+       callPromise(12)/*2*/.then(v => console.log(v)).catch(e => console.error(e));
+       
+       //=promise 다
+       async function callPromise2(num) {
+            if(num % 2 !==0) {
+                return "홀수"; //resolve
+
+            } else {
+                throw new Error("짝수"); //reject
+            }
+       }
+
+       callPromise2(11).then(v => console.log(v)).catch(e => console.error(e));
+       callPromise2(12).then(v => console.log(v)).catch(e => console.error(e));
+
+       async function callPromise3(num) {
+            if(num % 2 !==0) {
+                return "홀수"; //resolve
+
+            } else {
+                throw new Error("짝수"); //reject
+            }
+       }
+
+       async function asyncFunction() {
+            try { //await은 promise + then의 합체 라고 생각해야 함
+            const v = await callPromise3(11); //promise 동작 후에 값을 받아와서 그걸 다시 프로미스 시켜줌으로써 비동기를 동기화 시켜줄 수 있다. 실행은 하지만 처리는 안함
+            
+            console.log(v); //then의 역할을 같이 해줌
+       
+            } catch(e) {
+                    console.error(e);
+            }
+
+       
+            try {
+                    const v = await callPromise3(12); //await은 항상 promise안에 붙이는 것
+                    console.log(v);
+            
+            } catch(e) {
+                    console.error(e);
+            }
+      
+       }
+
+       asyncFunction();
+       
+      
+      
+
+        
+
+    </script>
+</body>
+</html>

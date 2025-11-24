@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 누구덕분인지(값)를 생각하면 쉬움
+        console.log(1 || 2);
+        console.log(11 || 21);
+        console.log(0 || 21);
+
+
+        console.log(0 || 21 || 0 );
+        console.log(11 || 21 || 10 );
+        console.log(11 && 0 && 10 );
+        console.log(11 && 21);
+
+        const a = 2;
+
+        console.log(a);
+
+        console.log((a % 2 === 0  && "짝수")|| "홀수");
+
+        const b = null; //b가 null이면 test로 대체해라
+        console.log(b ?? "test");
+
+        const c = {};
+        console.log(c ?? "test");
+        </script>
+</body>
+</html>

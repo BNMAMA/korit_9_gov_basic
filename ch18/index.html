@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 0;
+        const b = 0.0;
+        const c = "";
+        const d = null;
+        const e = undefined;
+        const f = NaN; //계산불가다
+        const g = false;
+
+        const h = {}; //object 
+        // h / i 는 주소가 존재함으로 false가 아니다
+        const i = [];
+
+        console.log(!!a);
+        console.log(!!b);
+        console.log(!!c);
+        console.log(!!d);
+        console.log(!!e);
+        console.log(!!f);
+        console.log(!!g);
+        console.log(!!h);
+        console.log(!!i);
+        console.log("=========================");
+        console.log(!a);
+        console.log(!b);
+        console.log(!c);
+        console.log(!d);
+        console.log(!e);
+        console.log(!f);
+        console.log(!g);
+        console.log(!h);
+        console.log(!i.length);
+
+
+        // 객체 구성
+        console.log(Object.keys(h).length); 
+        const user = {
+            username: "test",
+            password: "1234",
+        }
+
+        console.log(Object.keys(user));
+        console.log(Object.values(user));
+        console.log(Object.entries(user));
+        console.log(Object.entries[0][0]);
+        console.log(Object.entries[0][1]);
+        console.log(Object.entries[1][0]);
+        console.log(Object.entries[1][1]);
+        // key들의 모음 = 배열
+    </script>
+</body>
+</html>
